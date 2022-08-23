@@ -959,17 +959,19 @@ function checkDotNumber(el) {
 let dotNumber;
 
 shirt.addEventListener('click', () => {
-  const img = new Image();
-  img.src = `https://raw.githubusercontent.com/RallyZK/eldritch-codejam/gh-pages/assets/MythicCards/${cardsArr.flat()[clickNumber]}.png`;
-  img.onload = () => {
-    deck.style.backgroundImage = `url('https://raw.githubusercontent.com/RallyZK/eldritch-codejam/gh-pages/assets/MythicCards/${cardsArr.flat()[clickNumber]}.png')`;
-  };
+  // const img = new Image();
+  // img.src = `https://raw.githubusercontent.com/RallyZK/eldritch-codejam/gh-pages/assets/MythicCards/${cardsArr.flat()[clickNumber]}.png`;
+  // img.onload = () => {
+  //   deck.style.backgroundImage = `url('https://raw.githubusercontent.com/RallyZK/eldritch-codejam/gh-pages/assets/MythicCards/${cardsArr.flat()[clickNumber]}.png')`;
+  // };
 
-  // deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr.flat(5)[clickNumber]}.png')`;
+  deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr.flat(5)[clickNumber]}.png')`;
   dotNumber = selectedCard.findIndex(checkDotNumber);
+  
   selectedCard[dotNumber] = selectedCard[dotNumber] - 1;
-  console.log(`click number: ${clickNumber}`);
+  console.log(`click number: ${clickNumber}, card: ${cardsArr.flat()[clickNumber]}`);
   updateDots();
+  
   clickNumber = clickNumber + 1;
 });
 
