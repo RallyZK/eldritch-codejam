@@ -252,9 +252,9 @@ background-color: rgb(4, 15, 77);
     transition: 1s;    
 }
 
-/* .deck {
-    background-image: url('./assets/mythicCards/blue/blue1.png');
-} */
+.deck {
+    transition: all 0.2s ease;
+}
 
 
 

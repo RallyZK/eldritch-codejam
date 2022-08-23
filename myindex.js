@@ -269,18 +269,10 @@ const secondStep = document.querySelector('.second-step');
 
 const cards = document.querySelectorAll('.card')
 const cardText = document.querySelector('.card-text')
-// azathoth = document.querySelector('.azathoth'),
-// cthulhu = document.querySelector('.cthulhu'),
-// iogSothoth = document.querySelector('.iogSothoth'),
-// shubNiggurath = document.querySelector('.shubNiggurath');
+
 
 const levels = document.querySelectorAll('.level-button')
 const levelText = document.querySelector('.level-text')
-// veryLowLevel = document.querySelectorAll('.level-button')[0],
-// lowLevel = document.querySelectorAll('.level-button')[1],
-// middleLevel = document.querySelectorAll('.level-button')[2],
-// hightLevel = document.querySelectorAll('.level-button')[3],
-// veryHightLevel = document.querySelectorAll('.level-button')[4];
 
 const blendButton = document.querySelector('.blend-button');
 const backButton = document.querySelector('.back-button');
@@ -304,7 +296,6 @@ const secondCard = [0, 2, 2, 1, 3, 0, 3, 4, 0];
 const thirdCard = [0, 2, 1, 2, 3, 1, 3, 4, 0];
 const forthCard = [1, 2, 1, 3, 2, 1, 2, 4, 0];
 let selectedCard;
-
 
 
 for (let i = 0; i < cards.length; i++) {
@@ -687,50 +678,50 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[4]) {
       randomNum = Math.floor(Math.random() * 20);
-      rNum = randomNum;      
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
-          subArr.push(brownCards[rNum].id)
-        }      
+      rNum = randomNum;
+      if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+        subArr.push(brownCards[rNum].id)
+      }
     }
     cardsArr.push(subArr)
 
     subArr = [];
     while (subArr.length < selectedCard[5]) {
       randomNum = Math.floor(Math.random() * 11);
-      rNum = randomNum;      
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
-          subArr.push(blueCards[rNum].id)
-        }      
+      rNum = randomNum;
+      if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+        subArr.push(blueCards[rNum].id)
+      }
     }
     cardsArr.push(subArr)
 
     subArr = [];
     while (subArr.length < selectedCard[6]) {
       randomNum = Math.floor(Math.random() * 17);
-      rNum = randomNum;      
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
-          subArr.push(greenCards[rNum].id)
-        }      
+      rNum = randomNum;
+      if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+        subArr.push(greenCards[rNum].id)
+      }
     }
     cardsArr.push(subArr)
 
     subArr = [];
     while (subArr.length < selectedCard[7]) {
       randomNum = Math.floor(Math.random() * 20);
-      rNum = randomNum;      
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
-          subArr.push(brownCards[rNum].id)
-        }      
+      rNum = randomNum;
+      if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+        subArr.push(brownCards[rNum].id)
+      }
     }
     cardsArr.push(subArr)
 
     subArr = [];
     while (subArr.length < selectedCard[8]) {
       randomNum = Math.floor(Math.random() * 11);
-      rNum = randomNum;      
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
-          subArr.push(blueCards[rNum].id)
-        }      
+      rNum = randomNum;
+      if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+        subArr.push(blueCards[rNum].id)
+      }
     }
     cardsArr.push(subArr)
   }
@@ -956,20 +947,11 @@ function createCardsArr() {
     cardsArr.push(subArr)
   }
 
-
-
-
   console.log(`cardsArr: ${cardsArr}`)
 }
 
 let deck = document.querySelector('.deck')
 let clickNumber = 0;
-
-// function changeDeck() {
-//   deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr.flat(5)[clickNumber]}.png')`;
-//   clickNumber = clickNumber + 1
-// }
-// changeDeck()
 
 function checkDotNumber(el) {
   return el > 0;
@@ -977,7 +959,13 @@ function checkDotNumber(el) {
 let dotNumber;
 
 shirt.addEventListener('click', () => {
-  deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr.flat(5)[clickNumber]}.png')`;
+  const img = new Image();
+  img.src = `https://raw.githubusercontent.com/RallyZK/eldritch-codejam/gh-pages/assets/MythicCards/${cardsArr.flat()[clickNumber]}.png`;
+  img.onload = () => {
+    deck.style.backgroundImage = `url('https://raw.githubusercontent.com/RallyZK/eldritch-codejam/gh-pages/assets/MythicCards/${cardsArr.flat()[clickNumber]}.png')`;
+  };
+
+  // deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr.flat(5)[clickNumber]}.png')`;
   dotNumber = selectedCard.findIndex(checkDotNumber);
   selectedCard[dotNumber] = selectedCard[dotNumber] - 1;
   console.log(`click number: ${clickNumber}`);
@@ -985,11 +973,9 @@ shirt.addEventListener('click', () => {
   clickNumber = clickNumber + 1;
 });
 
-
 backButton.addEventListener('click', () => {
   firstStep.classList.remove('hidden');
   secondStep.classList.add('hidden');
   clickNumber = 0;
   window.location.reload()
 })
-
