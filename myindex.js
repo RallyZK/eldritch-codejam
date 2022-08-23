@@ -409,23 +409,25 @@ blendButton.addEventListener('click', () => {
   } else {
     firstStep.classList.add('hidden');
     secondStep.classList.remove('hidden');
-    createCardsArr();    
+    createCardsArr();
   }
 })
 
 let cardsArr = [];
 let subArr;
 let randomNum;
+let rNum;
 
 function createCardsArr() {
 
-  if (level === 1) {
+  if (level === 0) {
     subArr = [];
     while (subArr.length < selectedCard[0]) {
       randomNum = Math.floor(Math.random() * 17);
-      if (greenCards[randomNum].difficulty === 'easy' || greenCards[randomNum].difficulty === 'normal') {
-        if (cardsArr.flat().includes(greenCards[randomNum].id) === false) {
-          subArr.push(greenCards[randomNum].id)
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty === 'easy') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
         }
       }
     }
@@ -434,9 +436,10 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[1]) {
       randomNum = Math.floor(Math.random() * 20);
-      if (brownCards[randomNum].difficulty === 'easy' || brownCards[randomNum].difficulty === 'normal') {
-        if (cardsArr.flat().includes(brownCards[randomNum].id) === false) {
-          subArr.push(brownCards[randomNum].id)
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty === 'easy') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
         }
       }
     }
@@ -445,9 +448,10 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[2]) {
       randomNum = Math.floor(Math.random() * 11);
-      if (blueCards[randomNum].difficulty === 'easy' || blueCards[randomNum].difficulty === 'normal') {
-        if (cardsArr.flat().includes(blueCards[randomNum].id) === false) {
-          subArr.push(blueCards[randomNum].id)
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty === 'easy') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
         }
       }
     }
@@ -456,9 +460,10 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[3]) {
       randomNum = Math.floor(Math.random() * 17);
-      if (greenCards[randomNum].difficulty === 'easy' || greenCards[randomNum].difficulty === 'normal') {
-        if (cardsArr.flat().includes(greenCards[randomNum].id) === false) {
-          subArr.push(greenCards[randomNum].id)
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty === 'easy') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
         }
       }
     }
@@ -467,9 +472,10 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[4]) {
       randomNum = Math.floor(Math.random() * 20);
-      if (brownCards[randomNum].difficulty === 'easy' || brownCards[randomNum].difficulty === 'normal') {
-        if (cardsArr.flat().includes(brownCards[randomNum].id) === false) {
-          subArr.push(brownCards[randomNum].id)
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty === 'easy') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
         }
       }
     }
@@ -478,9 +484,10 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[5]) {
       randomNum = Math.floor(Math.random() * 11);
-      if (blueCards[randomNum].difficulty === 'easy' || blueCards[randomNum].difficulty === 'normal') {
-        if (cardsArr.flat().includes(blueCards[randomNum].id) === false) {
-          subArr.push(blueCards[randomNum].id)
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty === 'easy') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
         }
       }
     }
@@ -489,9 +496,10 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[6]) {
       randomNum = Math.floor(Math.random() * 17);
-      if (greenCards[randomNum].difficulty === 'easy' || greenCards[randomNum].difficulty === 'normal') {
-        if (cardsArr.flat().includes(greenCards[randomNum].id) === false) {
-          subArr.push(greenCards[randomNum].id)
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty === 'easy') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
         }
       }
     }
@@ -500,9 +508,10 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[7]) {
       randomNum = Math.floor(Math.random() * 20);
-      if (brownCards[randomNum].difficulty === 'easy' || brownCards[randomNum].difficulty === 'normal') {
-        if (cardsArr.flat().includes(brownCards[randomNum].id) === false) {
-          subArr.push(brownCards[randomNum].id)
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty === 'easy') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
         }
       }
     }
@@ -511,15 +520,444 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[8]) {
       randomNum = Math.floor(Math.random() * 11);
-      if (blueCards[randomNum].difficulty === 'easy' || blueCards[randomNum].difficulty === 'normal') {
-        if (cardsArr.flat().includes(blueCards[randomNum].id) === false) {
-          subArr.push(blueCards[randomNum].id)
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty === 'easy') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+  }
+
+
+
+
+  if (level === 1) {
+    subArr = [];
+    while (subArr.length < selectedCard[0]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty === 'easy' || greenCards[rNum].difficulty === 'normal') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
         }
       }
     }
     cardsArr.push(subArr)
 
+    subArr = [];
+    while (subArr.length < selectedCard[1]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty === 'easy' || brownCards[rNum].difficulty === 'normal') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[2]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty === 'easy' || blueCards[rNum].difficulty === 'normal') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[3]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty === 'easy' || greenCards[rNum].difficulty === 'normal') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[4]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty === 'easy' || brownCards[rNum].difficulty === 'normal') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[5]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty === 'easy' || blueCards[rNum].difficulty === 'normal') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[6]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty === 'easy' || greenCards[rNum].difficulty === 'normal') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[7]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty === 'easy' || brownCards[rNum].difficulty === 'normal') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[8]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty === 'easy' || blueCards[rNum].difficulty === 'normal') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
   }
+
+  if (level === 2) {
+    subArr = [];
+    while (subArr.length < selectedCard[0]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+        subArr.push(greenCards[rNum].id)
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[1]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;
+      if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+        subArr.push(brownCards[rNum].id)
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[2]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;
+      if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+        subArr.push(blueCards[rNum].id)
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[3]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+        subArr.push(greenCards[rNum].id)
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[4]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;      
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }      
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[5]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;      
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }      
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[6]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;      
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
+        }      
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[7]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;      
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }      
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[8]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;      
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }      
+    }
+    cardsArr.push(subArr)
+  }
+
+  if (level === 3) {
+    subArr = [];
+    while (subArr.length < selectedCard[0]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[1]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[2]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[3]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[4]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[5]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[6]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[7]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[8]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+  }
+
+
+  if (level === 4) {
+    subArr = [];
+    while (subArr.length < selectedCard[0]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[1]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[2]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[3]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[4]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[5]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[6]) {
+      randomNum = Math.floor(Math.random() * 17);
+      rNum = randomNum;
+      if (greenCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[7]) {
+      randomNum = Math.floor(Math.random() * 20);
+      rNum = randomNum;
+      if (brownCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+          subArr.push(brownCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+
+    subArr = [];
+    while (subArr.length < selectedCard[8]) {
+      randomNum = Math.floor(Math.random() * 11);
+      rNum = randomNum;
+      if (blueCards[rNum].difficulty !== 'easy') {
+        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+          subArr.push(blueCards[rNum].id)
+        }
+      }
+    }
+    cardsArr.push(subArr)
+  }
+
+
+
 
   console.log(`cardsArr: ${cardsArr}`)
 }
@@ -550,7 +988,7 @@ shirt.addEventListener('click', () => {
 
 backButton.addEventListener('click', () => {
   firstStep.classList.remove('hidden');
-  secondStep.classList.add('hidden');  
+  secondStep.classList.add('hidden');
   clickNumber = 0;
   window.location.reload()
 })
