@@ -305,6 +305,8 @@ const thirdCard = [0, 2, 1, 2, 3, 1, 3, 4, 0];
 const forthCard = [1, 2, 1, 3, 2, 1, 2, 4, 0];
 let selectedCard;
 
+
+
 for (let i = 0; i < cards.length; i++) {
   cards[i].onclick = function () {
     card = i;
@@ -340,17 +342,22 @@ for (let i = 0; i < cards.length; i++) {
       cards[3].classList.add('active');
     }
     console.log(`selected card: ${selectedCard}`)
-    green1.innerHTML = selectedCard[0]
-    green2.innerHTML = selectedCard[3]
-    green3.innerHTML = selectedCard[6]
-    brown1.innerHTML = selectedCard[1]
-    brown2.innerHTML = selectedCard[4]
-    brown3.innerHTML = selectedCard[7]
-    blue1.innerHTML = selectedCard[2]
-    blue2.innerHTML = selectedCard[5]
-    blue3.innerHTML = selectedCard[8]
+    updateDots()
   }
 }
+
+function updateDots() {
+  green1.innerHTML = selectedCard[0]
+  green2.innerHTML = selectedCard[3]
+  green3.innerHTML = selectedCard[6]
+  brown1.innerHTML = selectedCard[1]
+  brown2.innerHTML = selectedCard[4]
+  brown3.innerHTML = selectedCard[7]
+  blue1.innerHTML = selectedCard[2]
+  blue2.innerHTML = selectedCard[5]
+  blue3.innerHTML = selectedCard[8]
+}
+
 
 for (let i = 0; i < levels.length; i++) {
   levels[i].onclick = function () {
@@ -402,13 +409,9 @@ blendButton.addEventListener('click', () => {
   } else {
     firstStep.classList.add('hidden');
     secondStep.classList.remove('hidden');
-    createCardsArr()
+    createCardsArr();    
   }
 })
-
-
-
-console.log(`textContent: ${green1.textContent}`)
 
 let cardsArr = [];
 let subArr;
@@ -416,12 +419,14 @@ let randomNum;
 
 function createCardsArr() {
 
-  if (level === 0) {
+  if (level === 1) {
     subArr = [];
     while (subArr.length < selectedCard[0]) {
-      randomNum = Math.floor(Math.random() * 20);
-      if (greenCards[randomNum] !== undefined && greenCards[randomNum].difficulty === 'easy' && cardsArr.includes(greenCards[randomNum].id) === false) {
-        subArr.push(greenCards[randomNum].id)
+      randomNum = Math.floor(Math.random() * 17);
+      if (greenCards[randomNum].difficulty === 'easy' || greenCards[randomNum].difficulty === 'normal') {
+        if (cardsArr.flat().includes(greenCards[randomNum].id) === false) {
+          subArr.push(greenCards[randomNum].id)
+        }
       }
     }
     cardsArr.push(subArr)
@@ -429,26 +434,32 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[1]) {
       randomNum = Math.floor(Math.random() * 20);
-      if (brownCards[randomNum] !== undefined && brownCards[randomNum].difficulty === 'easy' && cardsArr.includes(brownCards[randomNum].id) === false) {
-        subArr.push(brownCards[randomNum].id)
+      if (brownCards[randomNum].difficulty === 'easy' || brownCards[randomNum].difficulty === 'normal') {
+        if (cardsArr.flat().includes(brownCards[randomNum].id) === false) {
+          subArr.push(brownCards[randomNum].id)
+        }
       }
     }
     cardsArr.push(subArr)
 
     subArr = [];
     while (subArr.length < selectedCard[2]) {
-      randomNum = Math.floor(Math.random() * 20);
-      if (blueCards[randomNum] !== undefined && blueCards[randomNum].difficulty === 'easy' && cardsArr.includes(blueCards[randomNum].id) === false) {
-        subArr.push(blueCards[randomNum].id)
+      randomNum = Math.floor(Math.random() * 11);
+      if (blueCards[randomNum].difficulty === 'easy' || blueCards[randomNum].difficulty === 'normal') {
+        if (cardsArr.flat().includes(blueCards[randomNum].id) === false) {
+          subArr.push(blueCards[randomNum].id)
+        }
       }
     }
     cardsArr.push(subArr)
 
     subArr = [];
     while (subArr.length < selectedCard[3]) {
-      randomNum = Math.floor(Math.random() * 20);
-      if (greenCards[randomNum] !== undefined && greenCards[randomNum].difficulty === 'easy' && cardsArr.includes(greenCards[randomNum].id) === false) {
-        subArr.push(greenCards[randomNum].id)
+      randomNum = Math.floor(Math.random() * 17);
+      if (greenCards[randomNum].difficulty === 'easy' || greenCards[randomNum].difficulty === 'normal') {
+        if (cardsArr.flat().includes(greenCards[randomNum].id) === false) {
+          subArr.push(greenCards[randomNum].id)
+        }
       }
     }
     cardsArr.push(subArr)
@@ -456,26 +467,32 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[4]) {
       randomNum = Math.floor(Math.random() * 20);
-      if (brownCards[randomNum] !== undefined && brownCards[randomNum].difficulty === 'easy' && cardsArr.includes(brownCards[randomNum].id) === false) {
-        subArr.push(brownCards[randomNum].id)
+      if (brownCards[randomNum].difficulty === 'easy' || brownCards[randomNum].difficulty === 'normal') {
+        if (cardsArr.flat().includes(brownCards[randomNum].id) === false) {
+          subArr.push(brownCards[randomNum].id)
+        }
       }
     }
     cardsArr.push(subArr)
 
     subArr = [];
     while (subArr.length < selectedCard[5]) {
-      randomNum = Math.floor(Math.random() * 20);
-      if (blueCards[randomNum] !== undefined && blueCards[randomNum].difficulty === 'easy' && cardsArr.includes(blueCards[randomNum].id) === false) {
-        subArr.push(blueCards[randomNum].id)
+      randomNum = Math.floor(Math.random() * 11);
+      if (blueCards[randomNum].difficulty === 'easy' || blueCards[randomNum].difficulty === 'normal') {
+        if (cardsArr.flat().includes(blueCards[randomNum].id) === false) {
+          subArr.push(blueCards[randomNum].id)
+        }
       }
     }
     cardsArr.push(subArr)
 
     subArr = [];
     while (subArr.length < selectedCard[6]) {
-      randomNum = Math.floor(Math.random() * 20);
-      if (greenCards[randomNum] !== undefined && greenCards[randomNum].difficulty === 'easy' && cardsArr.includes(greenCards[randomNum].id) === false) {
-        subArr.push(greenCards[randomNum].id)
+      randomNum = Math.floor(Math.random() * 17);
+      if (greenCards[randomNum].difficulty === 'easy' || greenCards[randomNum].difficulty === 'normal') {
+        if (cardsArr.flat().includes(greenCards[randomNum].id) === false) {
+          subArr.push(greenCards[randomNum].id)
+        }
       }
     }
     cardsArr.push(subArr)
@@ -483,17 +500,21 @@ function createCardsArr() {
     subArr = [];
     while (subArr.length < selectedCard[7]) {
       randomNum = Math.floor(Math.random() * 20);
-      if (brownCards[randomNum] !== undefined && brownCards[randomNum].difficulty === 'easy' && cardsArr.includes(brownCards[randomNum].id) === false) {
-        subArr.push(brownCards[randomNum].id)
+      if (brownCards[randomNum].difficulty === 'easy' || brownCards[randomNum].difficulty === 'normal') {
+        if (cardsArr.flat().includes(brownCards[randomNum].id) === false) {
+          subArr.push(brownCards[randomNum].id)
+        }
       }
     }
     cardsArr.push(subArr)
 
     subArr = [];
     while (subArr.length < selectedCard[8]) {
-      randomNum = Math.floor(Math.random() * 20);
-      if (blueCards[randomNum] !== undefined && blueCards[randomNum].difficulty === 'easy' && cardsArr.includes(blueCards[randomNum].id) === false) {
-        subArr.push(blueCards[randomNum].id)
+      randomNum = Math.floor(Math.random() * 11);
+      if (blueCards[randomNum].difficulty === 'easy' || blueCards[randomNum].difficulty === 'normal') {
+        if (cardsArr.flat().includes(blueCards[randomNum].id) === false) {
+          subArr.push(blueCards[randomNum].id)
+        }
       }
     }
     cardsArr.push(subArr)
@@ -503,34 +524,34 @@ function createCardsArr() {
   console.log(`cardsArr: ${cardsArr}`)
 }
 
-
-backButton.addEventListener('click', () => {
-  firstStep.classList.remove('hidden');
-  secondStep.classList.add('hidden');
-  cardsArr = [];
-  subArr = [];
-})
-
-
-
-
-
-
-
-
-
 let deck = document.querySelector('.deck')
 let clickNumber = 0;
 
-function changeDeck() {
-  deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr[clickNumber]}.png')`;
-  
-}
-changeDeck()
+// function changeDeck() {
+//   deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr.flat(5)[clickNumber]}.png')`;
+//   clickNumber = clickNumber + 1
+// }
+// changeDeck()
 
+function checkDotNumber(el) {
+  return el > 0;
+}
+let dotNumber;
 
 shirt.addEventListener('click', () => {
-  changeDeck()
-  clickNumber = clickNumber + 1
+  deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr.flat(5)[clickNumber]}.png')`;
+  dotNumber = selectedCard.findIndex(checkDotNumber);
+  selectedCard[dotNumber] = selectedCard[dotNumber] - 1;
+  console.log(`click number: ${clickNumber}`);
+  updateDots();
+  clickNumber = clickNumber + 1;
+});
+
+
+backButton.addEventListener('click', () => {
+  firstStep.classList.remove('hidden');
+  secondStep.classList.add('hidden');  
+  clickNumber = 0;
+  window.location.reload()
 })
 
