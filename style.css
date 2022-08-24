@@ -233,11 +233,11 @@ p {
 .shirt,
 .deck {
     margin: 2%;
-    height: 100%;
+    height: 99%;
     width: 39%;
-    background: center/cover;
-    background-size: 100%;
-    background-blend-mode: multiply;
+    /* background: center/cover; */
+    background-size: 100%; 
+    background-repeat: no-repeat;   
     border-radius: 15px;
 }
 

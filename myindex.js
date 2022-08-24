@@ -521,9 +521,6 @@ function createCardsArr() {
     cardsArr.push(subArr)
   }
 
-
-
-
   if (level === 1) {
     subArr = [];
     while (subArr.length < selectedCard[0]) {
@@ -967,6 +964,7 @@ shirt.addEventListener('click', () => {
   console.log(`click number: ${clickNumber}, card: ${cardsArr.flat()[clickNumber]}`);
 
   deck.style.backgroundImage = `url('./assets/MythicCards/allCards/${cardsArr.flat()[clickNumber]}.jpg')`;
+  deck.style.backgroundSize = `100% 100%`;  
   dotNumber = selectedCard.findIndex(checkDotNumber);  
   selectedCard[dotNumber] = selectedCard[dotNumber] - 1;
   updateDots();  
