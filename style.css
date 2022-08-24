@@ -236,7 +236,7 @@ p {
     height: 99%;
     width: 39%;
     /* background: center/cover; */
-    background-size: 100%; 
+    background-size: 100% 100%; 
     background-repeat: no-repeat;   
     border-radius: 15px;
 }
