@@ -966,7 +966,7 @@ shirt.addEventListener('click', () => {
   // };
   console.log(`click number: ${clickNumber}, card: ${cardsArr.flat()[clickNumber]}`);
 
-  deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr.flat()[clickNumber]}.png')`;
+  deck.style.backgroundImage = `url('./assets/MythicCards/allCards/${cardsArr.flat()[clickNumber]}.jpg')`;
   dotNumber = selectedCard.findIndex(checkDotNumber);  
   selectedCard[dotNumber] = selectedCard[dotNumber] - 1;
   updateDots();  
