@@ -964,15 +964,14 @@ shirt.addEventListener('click', () => {
   // img.onload = () => {
   //   deck.style.backgroundImage = `url('https://raw.githubusercontent.com/RallyZK/eldritch-codejam/gh-pages/assets/MythicCards/${cardsArr.flat()[clickNumber]}.png')`;
   // };
-
-  deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr.flat(5)[clickNumber]}.png')`;
-  dotNumber = selectedCard.findIndex(checkDotNumber);
-  
-  selectedCard[dotNumber] = selectedCard[dotNumber] - 1;
   console.log(`click number: ${clickNumber}, card: ${cardsArr.flat()[clickNumber]}`);
-  updateDots();
-  
+
+  deck.style.backgroundImage = `url('./assets/mythicCards/${cardsArr.flat()[clickNumber]}.png')`;
+  dotNumber = selectedCard.findIndex(checkDotNumber);  
+  selectedCard[dotNumber] = selectedCard[dotNumber] - 1;
+  updateDots();  
   clickNumber = clickNumber + 1;
+  
 });
 
 backButton.addEventListener('click', () => {
