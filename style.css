@@ -234,8 +234,9 @@ p {
 .deck {
     margin: 2%;
     height: 100%;
-    width: 40%;
+    width: 39%;
     background: center/cover;
+    background-size: 100%;
     background-blend-mode: multiply;
     border-radius: 15px;
 }
