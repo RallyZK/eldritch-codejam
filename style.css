@@ -24,7 +24,7 @@ body {
 
 
 h1 {
-    text-shadow: rgb(148, 14, 14) 1px 0 10px;
+    text-shadow: rgb(148, 14, 14) 1px 0 25px;
     margin: 15px;
 }
 
@@ -88,7 +88,10 @@ h3 {
     height: 70%;
     border: none;
     cursor: pointer;
-    background-color: rgb(21, 32, 22);
+    background-color: rgb(10, 121, 19);
+    background-image: url('./assets/MythicCards/greencolorbutton.jpg');
+    background-size: 100% 100%;
+    background-blend-mode: multiply;
     color: rgb(206, 206, 210);
     border-radius: 7px;
     font-size: 1em;
@@ -109,7 +112,10 @@ h3 {
     margin: 10px auto;
     border: none;
     cursor: pointer;
-    background-color: rgb(70, 10, 10);
+    background-color: rgb(193, 33, 33);
+    background-image: url('./assets/MythicCards/redcolorbutton.jpg');
+    background-size: 100% 100%;
+    background-blend-mode: multiply;
     color: aliceblue;
     border-radius: 7px;
     font-family: 'Cormorant Infant', serif;
@@ -204,19 +210,28 @@ p {
 .green1,
 .green2,
 .green3 {
-    background-color: rgb(1, 54, 11);
+    background-color: #347506;
+    background-image: url('./assets/MythicCards/greencolor.jpg');
+    background-size: 100% 100%;
+    background-blend-mode: multiply;
 }
 
 .brown1,
 .brown2,
 .brown3 {
-    background-color: rgb(65, 30, 1);
+    background-color: #5d2e08;
+    background-image: url('./assets/MythicCards/browncolor.jpg');
+    background-size: 100% 100%;
+    background-blend-mode: multiply;
 }
 
 .blue1,
 .blue2,
 .blue3 {
-    background-color: rgb(4, 15, 77);
+    background-color: #162e9a;
+    background-image: url('./assets/MythicCards/bluecolor.jpg');
+    background-size: 100% 100%;
+    background-blend-mode: multiply;
 }
 
 
@@ -234,11 +249,10 @@ p {
 .deck {
     margin: 2%;
     height: 99%;
-    width: 39%;
-    /* background: center/cover; */
+    width: 39%;    
     background-size: 100% 100%; 
     background-repeat: no-repeat;   
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
 .shirt:hover {

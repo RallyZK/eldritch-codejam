@@ -270,7 +270,6 @@ const secondStep = document.querySelector('.second-step');
 const cards = document.querySelectorAll('.card')
 const cardText = document.querySelector('.card-text')
 
-
 const levels = document.querySelectorAll('.level-button')
 const levelText = document.querySelector('.level-text')
 
@@ -290,19 +289,15 @@ const green1 = document.querySelector('.green1'),
   blue3 = document.querySelector('.blue3');
 
 let card, level;
-
 const firstCard = [1, 2, 1, 2, 3, 1, 2, 4, 0];
 const secondCard = [0, 2, 2, 1, 3, 0, 3, 4, 0];
 const thirdCard = [0, 2, 1, 2, 3, 1, 3, 4, 0];
 const forthCard = [1, 2, 1, 3, 2, 1, 2, 4, 0];
 let selectedCard;
 
-
 for (let i = 0; i < cards.length; i++) {
   cards[i].onclick = function () {
-    card = i;
-    console.log(`card: ${card}`);
-
+    card = i;  
     if (card === 0) {
       cardText.innerHTML = 'Карта "Azathoth"';
       selectedCard = firstCard;
@@ -332,7 +327,6 @@ for (let i = 0; i < cards.length; i++) {
       cards[2].classList.remove('active');
       cards[3].classList.add('active');
     }
-    console.log(`selected card: ${selectedCard}`)
     updateDots()
   }
 }
@@ -349,12 +343,9 @@ function updateDots() {
   blue3.innerHTML = selectedCard[8]
 }
 
-
 for (let i = 0; i < levels.length; i++) {
   levels[i].onclick = function () {
     level = i;
-    console.log(`level: ${level}`);
-
     if (level === 0) {
       levelText.innerHTML = 'Уровень сложности "Очень лёгкий"'
       levels[0].classList.add('active');
@@ -405,9 +396,7 @@ blendButton.addEventListener('click', () => {
 })
 
 let cardsArr = [];
-let subArr;
-let randomNum;
-let rNum;
+let subArr, randomNum, rNum;
 
 function createCardsArr() {
 
@@ -416,35 +405,30 @@ function createCardsArr() {
     while (subArr.length < selectedCard[0]) {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
-      if (greenCards[rNum].difficulty === 'easy') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+      if (greenCards[rNum].difficulty === 'easy' && !cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
           subArr.push(greenCards[rNum].id)
-        }
-      }
+        }      
     }
     cardsArr.push(subArr)
 
     subArr = [];
+    let j = 0;
     while (subArr.length < selectedCard[1]) {
-      randomNum = Math.floor(Math.random() * 20);
-      rNum = randomNum;
-      if (brownCards[rNum].difficulty === 'easy') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
-          subArr.push(brownCards[rNum].id)
-        }
+      if (brownCards[j].difficulty === 'easy' && !cardsArr.flat().includes(brownCards[j].id) && !subArr.includes(brownCards[j].id)) {
+        subArr.push(brownCards[j].id)
       }
+      j++
     }
     cardsArr.push(subArr)
+
 
     subArr = [];
     while (subArr.length < selectedCard[2]) {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
-      if (blueCards[rNum].difficulty === 'easy') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+      if (blueCards[rNum].difficulty === 'easy' && !cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
-        }
-      }
+        }     
     }
     cardsArr.push(subArr)
 
@@ -452,23 +436,19 @@ function createCardsArr() {
     while (subArr.length < selectedCard[3]) {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
-      if (greenCards[rNum].difficulty === 'easy') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+      if (greenCards[rNum].difficulty === 'easy' && !cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
           subArr.push(greenCards[rNum].id)
-        }
-      }
+        }     
     }
     cardsArr.push(subArr)
 
     subArr = [];
+    j = 0;
     while (subArr.length < selectedCard[4]) {
-      randomNum = Math.floor(Math.random() * 20);
-      rNum = randomNum;
-      if (brownCards[rNum].difficulty === 'easy') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
-          subArr.push(brownCards[rNum].id)
-        }
+      if (brownCards[j].difficulty === 'easy' && !cardsArr.flat().includes(brownCards[j].id) && !subArr.includes(brownCards[j].id)) {
+        subArr.push(brownCards[j].id)
       }
+      j++
     }
     cardsArr.push(subArr)
 
@@ -476,11 +456,9 @@ function createCardsArr() {
     while (subArr.length < selectedCard[5]) {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
-      if (blueCards[rNum].difficulty === 'easy') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+      if (blueCards[rNum].difficulty === 'easy' && !cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
-        }
-      }
+        }      
     }
     cardsArr.push(subArr)
 
@@ -488,10 +466,10 @@ function createCardsArr() {
     while (subArr.length < selectedCard[6]) {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
-      if (greenCards[rNum].difficulty === 'easy') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
-          subArr.push(greenCards[rNum].id)
-        }
+      if (greenCards[rNum].difficulty === 'easy' && !cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
+        subArr.push(greenCards[rNum].id)
+      } else if (greenCards[rNum].difficulty === 'normal' && !cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
+        subArr.push(greenCards[rNum].id)
       }
     }
     cardsArr.push(subArr)
@@ -500,10 +478,10 @@ function createCardsArr() {
     while (subArr.length < selectedCard[7]) {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
-      if (brownCards[rNum].difficulty === 'easy') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
-          subArr.push(brownCards[rNum].id)
-        }
+      if (brownCards[rNum].difficulty === 'easy' && !cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
+        subArr.push(brownCards[rNum].id)
+      } else if (brownCards[rNum].difficulty === 'normal' && !cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
+        subArr.push(brownCards[rNum].id)
       }
     }
     cardsArr.push(subArr)
@@ -512,11 +490,9 @@ function createCardsArr() {
     while (subArr.length < selectedCard[8]) {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
-      if (blueCards[rNum].difficulty === 'easy') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+      if (blueCards[rNum].difficulty === 'easy' && !cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
-        }
-      }
+        }      
     }
     cardsArr.push(subArr)
   }
@@ -527,7 +503,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
       if (greenCards[rNum].difficulty === 'easy' || greenCards[rNum].difficulty === 'normal') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+        if (!cardsArr.flat().includes(greenCards[rNum].id && !subArr.includes(greenCards[rNum].id))) {
           subArr.push(greenCards[rNum].id)
         }
       }
@@ -539,7 +515,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
       if (brownCards[rNum].difficulty === 'easy' || brownCards[rNum].difficulty === 'normal') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+        if (!cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
           subArr.push(brownCards[rNum].id)
         }
       }
@@ -551,7 +527,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
       if (blueCards[rNum].difficulty === 'easy' || blueCards[rNum].difficulty === 'normal') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+        if (!cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
         }
       }
@@ -563,7 +539,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
       if (greenCards[rNum].difficulty === 'easy' || greenCards[rNum].difficulty === 'normal') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+        if (!cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
           subArr.push(greenCards[rNum].id)
         }
       }
@@ -575,7 +551,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
       if (brownCards[rNum].difficulty === 'easy' || brownCards[rNum].difficulty === 'normal') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+        if (!cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
           subArr.push(brownCards[rNum].id)
         }
       }
@@ -587,7 +563,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
       if (blueCards[rNum].difficulty === 'easy' || blueCards[rNum].difficulty === 'normal') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+        if (!cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
         }
       }
@@ -599,7 +575,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
       if (greenCards[rNum].difficulty === 'easy' || greenCards[rNum].difficulty === 'normal') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+        if (!cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
           subArr.push(greenCards[rNum].id)
         }
       }
@@ -611,7 +587,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
       if (brownCards[rNum].difficulty === 'easy' || brownCards[rNum].difficulty === 'normal') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+        if (!cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
           subArr.push(brownCards[rNum].id)
         }
       }
@@ -623,7 +599,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
       if (blueCards[rNum].difficulty === 'easy' || blueCards[rNum].difficulty === 'normal') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+        if (!cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
         }
       }
@@ -636,7 +612,7 @@ function createCardsArr() {
     while (subArr.length < selectedCard[0]) {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
-      if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+      if (!cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
         subArr.push(greenCards[rNum].id)
       }
     }
@@ -646,7 +622,7 @@ function createCardsArr() {
     while (subArr.length < selectedCard[1]) {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
-      if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+      if (!cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
         subArr.push(brownCards[rNum].id)
       }
     }
@@ -656,7 +632,7 @@ function createCardsArr() {
     while (subArr.length < selectedCard[2]) {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
-      if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+      if (!cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
         subArr.push(blueCards[rNum].id)
       }
     }
@@ -666,7 +642,7 @@ function createCardsArr() {
     while (subArr.length < selectedCard[3]) {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
-      if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+      if (!cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
         subArr.push(greenCards[rNum].id)
       }
     }
@@ -676,7 +652,7 @@ function createCardsArr() {
     while (subArr.length < selectedCard[4]) {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
-      if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+      if (!cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
         subArr.push(brownCards[rNum].id)
       }
     }
@@ -686,7 +662,7 @@ function createCardsArr() {
     while (subArr.length < selectedCard[5]) {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
-      if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+      if (!cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
         subArr.push(blueCards[rNum].id)
       }
     }
@@ -696,7 +672,7 @@ function createCardsArr() {
     while (subArr.length < selectedCard[6]) {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
-      if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+      if (!cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
         subArr.push(greenCards[rNum].id)
       }
     }
@@ -706,7 +682,7 @@ function createCardsArr() {
     while (subArr.length < selectedCard[7]) {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
-      if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+      if (!cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
         subArr.push(brownCards[rNum].id)
       }
     }
@@ -716,7 +692,7 @@ function createCardsArr() {
     while (subArr.length < selectedCard[8]) {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
-      if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+      if (!cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
         subArr.push(blueCards[rNum].id)
       }
     }
@@ -729,7 +705,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
       if (greenCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+        if (!cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
           subArr.push(greenCards[rNum].id)
         }
       }
@@ -741,7 +717,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
       if (brownCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+        if (!cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
           subArr.push(brownCards[rNum].id)
         }
       }
@@ -753,7 +729,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
       if (blueCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+        if (!cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
         }
       }
@@ -765,7 +741,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
       if (greenCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+        if (!cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
           subArr.push(greenCards[rNum].id)
         }
       }
@@ -777,7 +753,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
       if (brownCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+        if (!cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
           subArr.push(brownCards[rNum].id)
         }
       }
@@ -789,7 +765,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
       if (blueCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+        if (!cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
         }
       }
@@ -801,7 +777,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
       if (greenCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+        if (!cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
           subArr.push(greenCards[rNum].id)
         }
       }
@@ -813,7 +789,7 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
       if (brownCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
+        if (!cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
           subArr.push(brownCards[rNum].id)
         }
       }
@@ -825,37 +801,32 @@ function createCardsArr() {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
       if (blueCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+        if (!cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
         }
       }
     }
     cardsArr.push(subArr)
   }
-
 
   if (level === 4) {
     subArr = [];
     while (subArr.length < selectedCard[0]) {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
-      if (greenCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
-          subArr.push(greenCards[rNum].id)
-        }
+      if (greenCards[rNum].difficulty === 'hard' && !cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
+          subArr.push(greenCards[rNum].id)        
       }
     }
     cardsArr.push(subArr)
 
     subArr = [];
+    let j = 0;
     while (subArr.length < selectedCard[1]) {
-      randomNum = Math.floor(Math.random() * 20);
-      rNum = randomNum;
-      if (brownCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
-          subArr.push(brownCards[rNum].id)
-        }
+      if (brownCards[j].difficulty === 'hard' && !cardsArr.flat().includes(brownCards[j].id) && !subArr.includes(brownCards[j].id)) {
+        subArr.push(brownCards[j].id)
       }
+      j++
     }
     cardsArr.push(subArr)
 
@@ -863,11 +834,9 @@ function createCardsArr() {
     while (subArr.length < selectedCard[2]) {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
-      if (blueCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+      if (blueCards[rNum].difficulty === 'hard' && !cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
-        }
-      }
+        }      
     }
     cardsArr.push(subArr)
 
@@ -875,23 +844,19 @@ function createCardsArr() {
     while (subArr.length < selectedCard[3]) {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
-      if (greenCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
+      if (greenCards[rNum].difficulty === 'hard' && !cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
           subArr.push(greenCards[rNum].id)
-        }
-      }
+        }      
     }
     cardsArr.push(subArr)
 
     subArr = [];
+    j = 0;
     while (subArr.length < selectedCard[4]) {
-      randomNum = Math.floor(Math.random() * 20);
-      rNum = randomNum;
-      if (brownCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
-          subArr.push(brownCards[rNum].id)
-        }
+      if (brownCards[j].difficulty === 'hard' && !cardsArr.flat().includes(brownCards[j].id) && !subArr.includes(brownCards[j].id)) {
+        subArr.push(brownCards[j].id)
       }
+      j++
     }
     cardsArr.push(subArr)
 
@@ -899,11 +864,9 @@ function createCardsArr() {
     while (subArr.length < selectedCard[5]) {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
-      if (blueCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+      if (blueCards[rNum].difficulty === 'hard' && !cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
-        }
-      }
+        }      
     }
     cardsArr.push(subArr)
 
@@ -911,10 +874,10 @@ function createCardsArr() {
     while (subArr.length < selectedCard[6]) {
       randomNum = Math.floor(Math.random() * 17);
       rNum = randomNum;
-      if (greenCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(greenCards[rNum].id)) {
-          subArr.push(greenCards[rNum].id)
-        }
+      if (greenCards[rNum].difficulty === 'hard' && !cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
+        subArr.push(greenCards[rNum].id)
+      } else if (greenCards[rNum].difficulty === 'normal' && !cardsArr.flat().includes(greenCards[rNum].id) && !subArr.includes(greenCards[rNum].id)) {
+        subArr.push(greenCards[rNum].id)
       }
     }
     cardsArr.push(subArr)
@@ -923,10 +886,10 @@ function createCardsArr() {
     while (subArr.length < selectedCard[7]) {
       randomNum = Math.floor(Math.random() * 20);
       rNum = randomNum;
-      if (brownCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(brownCards[rNum].id)) {
-          subArr.push(brownCards[rNum].id)
-        }
+      if (brownCards[rNum].difficulty === 'hard' && !cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
+        subArr.push(brownCards[rNum].id)
+      } else if (brownCards[rNum].difficulty === 'normal' && !cardsArr.flat().includes(brownCards[rNum].id) && !subArr.includes(brownCards[rNum].id)) {
+        subArr.push(brownCards[rNum].id)
       }
     }
     cardsArr.push(subArr)
@@ -935,16 +898,12 @@ function createCardsArr() {
     while (subArr.length < selectedCard[8]) {
       randomNum = Math.floor(Math.random() * 11);
       rNum = randomNum;
-      if (blueCards[rNum].difficulty !== 'easy') {
-        if (!cardsArr.flat().includes(blueCards[rNum].id)) {
+      if (blueCards[rNum].difficulty === 'hard' && !cardsArr.flat().includes(blueCards[rNum].id) && !subArr.includes(blueCards[rNum].id)) {
           subArr.push(blueCards[rNum].id)
-        }
-      }
+        }      
     }
     cardsArr.push(subArr)
-  }
-
-  console.log(`cardsArr: ${cardsArr}`)
+  }  
 }
 
 let deck = document.querySelector('.deck')
@@ -956,25 +915,17 @@ function checkDotNumber(el) {
 let dotNumber;
 
 shirt.addEventListener('click', () => {
-  // const img = new Image();
-  // img.src = `https://raw.githubusercontent.com/RallyZK/eldritch-codejam/gh-pages/assets/MythicCards/${cardsArr.flat()[clickNumber]}.png`;
-  // img.onload = () => {
-  //   deck.style.backgroundImage = `url('https://raw.githubusercontent.com/RallyZK/eldritch-codejam/gh-pages/assets/MythicCards/${cardsArr.flat()[clickNumber]}.png')`;
-  // };
-  console.log(`click number: ${clickNumber}, card: ${cardsArr.flat()[clickNumber]}`);
-
   deck.style.backgroundImage = `url('./assets/MythicCards/allCards/${cardsArr.flat()[clickNumber]}.jpg')`;
-  deck.style.backgroundSize = `100% 100%`;  
-  dotNumber = selectedCard.findIndex(checkDotNumber);  
+  deck.style.backgroundSize = `100% 100%`;
+  dotNumber = selectedCard.findIndex(checkDotNumber);
   selectedCard[dotNumber] = selectedCard[dotNumber] - 1;
-  updateDots();  
+  updateDots();
   clickNumber = clickNumber + 1;
-  
 });
 
 backButton.addEventListener('click', () => {
   firstStep.classList.remove('hidden');
   secondStep.classList.add('hidden');
   clickNumber = 0;
-  window.location.reload()
+  window.location.reload();
 })
