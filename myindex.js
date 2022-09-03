@@ -1081,6 +1081,7 @@ function changeCard(mincard, maxcard) {
     updateDots();
     shownCard = cardsArr[dotNumber][0]
     deck.style.backgroundImage = `url('./assets/MythicCards/allCards/${shownCard}.jpg')`;
+    deck.style.backgroundSize = '100%, 100%';
     cardsArr[dotNumber].shift()
     console.log('dotNumber:', dotNumber)
     console.log('clickNumber:', clickNumber)
