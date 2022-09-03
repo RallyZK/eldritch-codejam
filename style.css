@@ -88,7 +88,7 @@ h3 {
     height: 70%;
     border: none;
     cursor: pointer;
-    background-color: rgb(10, 121, 19);
+    background-color: rgb(46, 81, 49);
     background-image: url('./assets/MythicCards/greencolorbutton.jpg');
     background-size: 100% 100%;
     background-blend-mode: multiply;
@@ -234,7 +234,6 @@ p {
     background-blend-mode: multiply;
 }
 
-
 .deck-wrapper {
     display: flex;
     flex-direction: row;
@@ -272,7 +271,6 @@ p {
     background: rgba(0, 0, 0, 0.3);
 }
 
-
 footer {
     position: absolute;
     bottom: 1%;
@@ -293,8 +291,6 @@ footer {
 .logo:hover {
     opacity: 1;
 }
-
-
 
 
 /* Вспомогательные стили */
