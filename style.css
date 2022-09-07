@@ -348,8 +348,8 @@ footer {
         height: 54vh;
     }
 
-    .tap {           
-        font-size: 40px;       
+    .tap {
+        font-size: 40px;
     }
 }
 
@@ -368,7 +368,7 @@ footer {
     }
 
     .cards-wrapper {
-        height: 150px;
+        height: 430px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 200px 200px;
@@ -401,14 +401,14 @@ footer {
     }
 
     .level-button {
-        width: 300px;
+        width: 270px;
         height: 35px;
         margin: 0 auto;
     }
 
     .blend-button,
     .back-button {
-        width: 300px;
+        width: 270px;
         height: 35px;
     }
 
@@ -417,15 +417,29 @@ footer {
         margin: 0 auto;
     }
 
-    
+
     .half1,
     .half2 {
         width: 100%;
     }
 
     .steps {
-        height: 10px;
+        height: 0px;
     }
+
+    .green1,
+    .brown1,
+    .blue1,
+    .green2,
+    .brown2,
+    .blue2,
+    .green3,
+    .brown3,
+    .blue3 {
+        height: 40px;
+        width: 40px;
+    }
+
     .deck-wrapper {
         display: flex;
         flex-direction: column;
@@ -445,9 +459,13 @@ footer {
         width: 190px;
     }
 
-    .tap {    
-       top: 10px;    
-        font-size: 30px;       
+    .card-shirt {
+        border-radius: 20px;
+    }
+
+    .tap {
+        top: 5px;
+        font-size: 30px;
     }
 
     footer {
