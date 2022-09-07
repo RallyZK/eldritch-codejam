@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eldritch</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="fav.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Eldritch Horror Game Helper</h1>
+    </header>
+    <main>
+        <div class="first-step">
+            <h3>Выберите карту Древнего</h3>
+            <div class="cards-wrapper">
+                <div class="azathoth">
+                    <img class="card" src="./assets/Ancients/Azatot.jpg" alt="Azathoth card">
+                </div>
+                <div class="cthulhu">
+                    <img class="card" src="./assets/Ancients/Ktylhu.jpg" alt="Cthulthu card">
+                </div>
+                <div class="iogSothoth">
+                    <img class="card" src="./assets/Ancients/Yog.jpg" alt="IogSothoth card">
+                </div>
+                <div class="shubNiggurath">
+                    <img class="card" src="./assets/Ancients/Shub.jpg" alt="ShubNiggurath card">
+                </div>
+            </div>
+            <h3>Выберите уровень сложности</h3>
+            <div class="level-wrapper">
+                <button class="level-button">Очень лёгкий</button>
+                <button class="level-button">Лёгкий</button>
+                <button class="level-button">Средний</button>
+                <button class="level-button">Высокий</button>
+                <button class="level-button">Очень высокий</button>
+            </div>
+            <button class="blend-button">Замешать колоду</button>
+        </div>
+        <div class="second-step hidden">
+            <div class="halfs">
+                <div class="half1">
+                    <div class="card-text">Карта "Azathoth"</div>
+                    <div class="level-text">Уровень сложности "Очень лёгкий"</div>
+                    <div class="steps">
+                        <p>1 этап:</p>
+                        <div class="green1"></div>
+                        <div class="brown1"></div>
+                        <div class="blue1"></div>
+                    </div>
+                    <div class="steps">
+                        <p>2 этап:</p>
+                        <div class="green2"></div>
+                        <div class="brown2"></div>
+                        <div class="blue2"></div>
+                    </div>
+                    <div class="steps">
+                        <p>3 этап:</p>
+                        <div class="green3"></div>
+                        <div class="brown3"></div>
+                        <div class="blue3"></div>
+                    </div>
+                </div>
+                <div class="half2">
+                    <h3>Колода мифов</h3>
+                    <div class="deck-wrapper">                       
+                        <div class="deck"></div>
+                        <div class="shirt">
+                            <img class="card-shirt" src="./assets/рубашка2.jpg" alt="Card shirt">
+                            <p class="tap">TAP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="back-button">Назад</button>
+        </div>
+    </main>
+    <footer>
+        <p class="logo"><b>2022</b></p>
+        <a class="logo" href="https://github.com/RallyZK" target="_blank"><img src="assets/github_logo_white.png"
+                alt="GitHub Logo" width="60" height="15"></a>
+        <a class="logo" href="https://rs.school/js/" target="_blank"><img src="assets/rs_school_js_logo_White.png"
+                alt="RS-School Logo" width="50" height="16"></a>
+    </footer>
+    <script type="module" src="myindex.js"></script>
+</body>
+
+</html>
