@@ -15,6 +15,7 @@ body {
     background-blend-mode: multiply;
     background: center/cover, rgba(0, 0, 0, 0.5);
     background-image: url("./assets/home.png");
+    position: relative;
 }
 
 .first-step {
@@ -121,7 +122,7 @@ h3 {
     font-family: 'Cormorant Infant', serif;
     font-weight: 700;
     letter-spacing: 1px;
-    z-index: 50;
+    z-index: 1000;
 }
 
 .blend-button:hover,
@@ -248,9 +249,9 @@ p {
 .deck {
     margin: 2%;
     height: 99%;
-    width: 39%;    
-    background-size: 100% 100%; 
-    background-repeat: no-repeat;   
+    width: 39%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     border-radius: 20px;
 }
 
@@ -269,6 +270,8 @@ p {
 .deck {
     transition: all 0.2s ease;
     background: rgba(0, 0, 0, 0.3);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 footer {
@@ -309,4 +312,116 @@ footer {
 
 .block {
     display: block;
+}
+
+@media (max-width: 900px) {
+    .cards-wrapper {
+        height: 44vh;
+    }
+
+    .level-wrapper {
+        height: 13vh;
+    }
+
+    .blend-button,
+    .back-button {
+        height: 13vh;
+    }
+
+    .half1 {
+        font-size: 12px;
+    }
+
+    .steps {
+        gap: 9px;
+    }
+
+    .deck-wrapper {
+        height: 54vh;
+    }
+}
+
+@media (max-width: 650px) {
+   
+    body {
+        min-height: auto;
+    }
+
+    .cards-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .azathoth,
+    .cthulhu,
+    .iogSothoth,
+    .shubNiggurath {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1%;
+        height: 100%;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .azathoth,    
+    .iogSothoth {        
+        justify-content: flex-end;        
+    }
+
+    .level-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;   
+        gap: 10px;    
+        height: auto; 
+    }
+
+    .level-button {
+        width: 300px;
+        height: 35px;
+        margin: 0 auto;
+    }
+
+    .blend-button,
+    .back-button {
+        width: 300px;
+        height: 35px;
+    }
+
+    .halfs {
+        display: grid;
+        grid-template-columns: 1 fr;
+        margin: 0 auto;
+    }
+
+    .half1,
+    .half2 {
+        width: 100%;
+    }
+
+    .deck-wrapper {        
+        display: flex;
+        flex-direction: column;   
+        height: 70vh; 
+        gap: 0px;      
+    }
+
+    .deck {
+        height: 246px;
+    width: 190px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .shirt {
+        height: 100px;
+        width: 190px;
+    }
+
+    footer {
+        display: none;
+    }
 }
